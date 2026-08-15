@@ -2,3 +2,4 @@
 ## Setup
 1. Clone the repository using Git.
 2. Make sure you use appropriate compiler and commans to run the file.
+## Prerequisites
