@@ -8,6 +8,10 @@ struct Profile {
     	string email;
 };
 
+bool hasValidEmail(const string& email) {
+    	return email.find('@') != string::npos && email.find('.') != string::npos;
+}
+
 void displayProfile(const Profile& profile) {
     	cout << "Name: " << profile.name << '\n';
     	cout << "Course: " << profile.course << '\n';
@@ -17,6 +21,12 @@ void displayProfile(const Profile& profile) {
 int main() {
     	Profile profile{"Amaan", "Computer Science", "student@example.com"};
     	displayProfile(profile);
+
+	if (hasValidEmail(profile.email)) {
+   	 cout << "Email format is valid." << '\n';
+	} else {
+   	 cout << "Invalid email format." << '\n';
+}
 
     	return 0;
 }
