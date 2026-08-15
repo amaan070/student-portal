@@ -5,6 +5,9 @@ bool isDarkModeEnabled = true;
 string language = "English";
 bool notificationsEnabled = true;
 
+int sessionTimeout = 30;
+bool autosaveEnabled = true;
+
 int fontSize = 14;
 
 int main() {
