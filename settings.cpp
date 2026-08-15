@@ -4,6 +4,7 @@ using namespace std;
 bool isDarkModeEnabled = true;
 string language = "English";
 bool notificationsEnabled = true;
+int sessionTimeout = 30;
 
 int fontSize = 14;
 
