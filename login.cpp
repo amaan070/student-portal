@@ -10,11 +10,19 @@ string maskPassword(const string& password) {
     	return string(password.length(), '*');
 }
 
+bool isAccountLocked(int failedAttempts) {
+   	return failedAttempts >= 3;
+}
+
 void logout() {
-	cout << "Logged out successfully." << '\n';
+	cout << "Logged out successfully." << endl;
 }
 
 int main() {
+	int failedAttemps = 0;
+	
+	while(failedAttempts < 3){
+	
 	string username, password;
 
     	cout << "Enter Username: ";
@@ -23,13 +31,20 @@ int main() {
     	cout << "Enter Password: ";
     	cin >> password;
 	
-	cout << "Password entered: " << maskPassword(password) << '\n';
+	cout << "Password entered: " << maskPassword(password) << endl;
 
     	if (validate(username, password)) {
-        	cout << "Login successful." << '\n';
-    	} else {
-        	cout << "Invalid username or password." << '\n';
-    	}
+        	cout << "Login successful." << endl;
+		break;
+    	} 
+
+	failedAttempts++;
+	cout << "Invalid Credentials" << endl;
+
+	if(isAccountLocked(failedAttempts)){
+		cout<< "Account temporarily locked after 3 failed attempts" <<end;
+	}
+}
 	
 	logout();
 
