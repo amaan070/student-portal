@@ -18,6 +18,10 @@ void displayProfile(const Profile& profile) {
     	cout << "Email: " << profile.email << '\n';
 }
 
+void updateCourse(Profile& profile, const string& newCourse) {
+   	 profile.course = newCourse;
+}
+
 int main() {
     	Profile profile{"Amaan", "Computer Science", "student@example.com"};
     	displayProfile(profile);
@@ -26,6 +30,9 @@ int main() {
    	 cout << "Email format is valid." << '\n';
 	} else {
    	 cout << "Invalid email format." << '\n';
+
+	updateCourse(profile, "Data Science");
+	cout << "Updated course: " << profile.course << '\n';
 }
 
     	return 0;
