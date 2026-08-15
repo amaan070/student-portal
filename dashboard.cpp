@@ -20,12 +20,17 @@ double calculateCompletion(const Dashboard& dashboard) {
 
     	return (static_cast<double>(dashboard.completedAssignments)/ dashboard.assignments) * 100.0;
 }
+bool hasPendingAssignments(const Dashboard& dashboard) {
+    	return dashboard.completedAssignments < dashboard.assignments;
+}
 
 int main() {
    	 Dashboard dashboard{4, 6, 4};
    	 displayDashboard(dashboard);
 
 	cout << "Assignment Completion: " << calculateCompletion(dashboard) << "%" << endl;
+
+	cout << "Pending assignments: " << (hasPendingAssignments(dashboard) ? "Yes" : "No") << endl;
 
     return 0;
 }
