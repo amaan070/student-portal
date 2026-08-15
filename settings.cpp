@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool isDarkModeEnabled = true;
+bool isDarkModeEnabled = 0;
 string language = "English";
 bool notificationsEnabled = true;
 int sessionTimeout = 30;
