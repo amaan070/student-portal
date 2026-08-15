@@ -18,6 +18,10 @@ void displayStudent(const Student &student){
 	cout<<"Course: "<< student.course << endl;
 }
 
+void updateCourse(Student& student, const string& newCourse) {
+    	student.course = newCourse;
+}
+
 int main(){
 	Student student{2026201032, "Amaan Ahmad", "M.TECH CSE"};
 	displayStudent(student);
@@ -30,6 +34,10 @@ int main(){
 	else{
 	cout<<"Student Not Found!" <<endl;
 	}
+
+	updateCourse(student, "Data Science");
+
+	cout << "Updated course: " << student.course << '\n';
 
 	return 0;
 }
