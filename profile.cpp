@@ -22,6 +22,12 @@ void updateCourse(Profile& profile, const string& newCourse) {
    	 profile.course = newCourse;
 }
 
+bool isSupportedCourse(const string& course) {
+    	return course == "Computer Science" ||
+           	course == "Data Science" ||
+           	course == "Information Technology";
+}
+
 int main() {
     	Profile profile{"Amaan", "Computer Science", "student@example.com"};
     	displayProfile(profile);
@@ -33,6 +39,12 @@ int main() {
 
 	updateCourse(profile, "Data Science");
 	cout << "Updated course: " << profile.course << '\n';
+
+	if (isSupportedCourse(profile.course)) {
+    	cout << "Course is supported." << '\n';
+	} else {
+    	cout << "Course is not supported." << '\n';
+}
 }
 
     	return 0;
